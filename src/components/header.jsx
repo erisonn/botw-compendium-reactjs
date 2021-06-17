@@ -6,8 +6,10 @@ const Header = ({ShowEquipment, ShowMonsters}) => {
     return ( 
         <header>
             <nav>
-                <a href="#" onClick={() => ShowMonsters()}>Monsters</a>
-                <a href="#" onClick={() => ShowEquipment()}>Equipments</a>
+                <a href="#" onClick={() => ShowMonsters()}>MONSTERS</a>
+                <a href="#" onClick={() => ShowEquipment()}>EQUIPMENTS</a>
+                <a href="#">CREATURES</a>
+                <a href="#">INGREDIENTS</a>
             </nav>
         </header>
     );

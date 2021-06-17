@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
+* {
+    color: #bbbbbb;
+    font-family: 'Oswald', sans-serif;
+}
 body, html {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: #19192c;
 }
 .equipments, .monsters {
     margin: auto;
@@ -15,14 +21,17 @@ body, html {
         text-align: center;
         margin-top: 50px;
         h1 {
-            font-size: 20px;
+            font-size: 25px;
+        }
+        img {
+            border-radius: 5px;
         }
         p {
             margin: 20px 20px 0px 20px;
-            font-size: 15px;
+            font-size: 20px;
         }
         ul {
-            font-size: 15px;
+            font-size: 20px;
             list-style: none;
             padding: 0;
         }

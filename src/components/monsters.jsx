@@ -23,8 +23,8 @@ const Monsters = () => {
 
     <div className='monsters'>
       {monstersList.map(monster => 
-        <div className='monster-item'>
-          <h1>{monster.name}</h1>
+        <div className='monster-item' key={monster.id}>
+          <h1>{monster.name.toUpperCase()}</h1>
           <img src={monster.image}/>
           <p>{monster.description}</p>
         </div>
