@@ -1,23 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const Monsters = () => {
-
-  const API_URL = 'https://botw-compendium.herokuapp.com/api/v2/category/monsters'
-
-  function fetchAPI(url) {
-    let request = new XMLHttpRequest()
-    request.open("GET", url, false)
-    request.send()
-    return request.responseText
-  }
-
-  var [monstersList, setmonsterList] = useState([])
-
-  useEffect(() => {
-    var monsters = fetchAPI(API_URL);
-    var monsters_data = JSON.parse(monsters);
-    monstersList = setmonsterList(monsters_data.data)
-  }, [])
+const Monsters = ({monstersList}) => {
 
   return (  
 

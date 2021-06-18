@@ -2,14 +2,15 @@ import React from 'react';
 import './header.css'
 
 // children
-const Header = ({ShowEquipment, ShowMonsters}) => {
+const Header = ({setContent}) => {
     return ( 
         <header>
             <nav>
-                <a href="#" onClick={() => ShowMonsters()}>MONSTERS</a>
-                <a href="#" onClick={() => ShowEquipment()}>EQUIPMENTS</a>
                 <a href="#">CREATURES</a>
-                <a href="#">INGREDIENTS</a>
+                <a href="#" onClick={() => setContent('Equipments')}>EQUIPMENTS</a>
+                <a href="#" onClick={() => setContent('Materials')}>MATERIALS</a>
+                <a href="#" onClick={() => setContent('Monsters')}>MONSTERS</a>
+                <a href="#">TREASURE</a>
             </nav>
         </header>
     );
