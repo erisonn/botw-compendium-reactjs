@@ -9,61 +9,44 @@ import Header from './header'
 // parent 
 const Main = () => {
 
-    
+    const fetchAPI = (url, setList) => {
+        fetch(url)
+        .then(response => response.json())
+        .then(responseText => setList(responseText.data))
+    }
+
     //fetch na sessão 'monsters' da API e converte para JSON
     
     var [monstersList, setmonsterList] = useState([])
 
     useEffect(() => {
-        fetchMonsters();
+        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/monsters', setmonsterList);
     }, [])
 
-    const fetchMonsters = () => {
-        fetch("https://botw-compendium.herokuapp.com/api/v2/category/monsters")
-        .then(response => response.json())
-        .then(responseText => setmonsterList(responseText.data))
-    }
 
     //fetch na sessão 'equipments' da API e converte para JSON
     
     var [equipmentsList, setequipmentList] = useState([])
     
     useEffect(() => {
-        fetchEquipments();
+        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/equipment', setequipmentList);
     }, [])
-
-    const fetchEquipments = () => {
-        fetch("https://botw-compendium.herokuapp.com/api/v2/category/equipment")
-        .then(response => response.json())
-        .then(responseText => setequipmentList(responseText.data))
-    }
 
     //fetch na sessão 'materials' da API e converte para JSON
 
     var [materialsList, setmaterialsList] = useState([])
 
     useEffect(() => {
-        fetchMaterials();
+        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/materials', setmaterialsList);
     }, [])
 
-    const fetchMaterials = () => {
-        fetch("https://botw-compendium.herokuapp.com/api/v2/category/materials")
-        .then(response => response.json())
-        .then(responseText => setmaterialsList(responseText.data))
-    }
     //fetch na sessão 'treasures' da API e converte para JSON
 
     var [treasuresList, settreasuresList] = useState([])
 
     useEffect(() => {
-        fetchTreasures();
+        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
     }, [])
-
-    const fetchTreasures = () => {
-        fetch("https://botw-compendium.herokuapp.com/api/v2/category/treasure")
-        .then(response => response.json())
-        .then(responseText => settreasuresList(responseText.data))
-    }
 
     const [content, setContent] = useState('Monsters');
 
