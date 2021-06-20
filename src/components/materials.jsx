@@ -8,13 +8,13 @@ const Materials = ({materialsList}) => {
       {materialsList.map(material => 
         <div className='material-item' key={material.id}>
           <h1>{material.name.toUpperCase()}</h1>
-          <img src={material.image}/>
+          <img src={material.image} alt={material.name}/>
           <p>{material.description}</p>
           <ul>
               <li>Cooking Effect: {material.cooking_effect}</li>
               <li>Hearts Recovered: {material.hearts_recovered}</li>
               <ul>
-                Common Locations: {material.common_locations.map(location => <li>{location}</li>)}
+                Common Locations {material.common_locations.map(location => <li key={location + material.id}>{location}</li>)}
               </ul>
           </ul>
         </div>

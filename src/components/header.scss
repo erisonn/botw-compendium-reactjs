@@ -10,12 +10,21 @@ header {
         align-items: center;
         justify-content: center;
         a {
-            margin: 0px 10px 0px 10px;
+            margin: 0px 6px 0px 6px;
             font-size: 20px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.2s ease-in-out;
+            background-color: rgba(0, 183, 255, 0.253);
+            border-radius: 2px;
+            padding: 0px 5px 0px 5px;
         }
     }
+}
+.content-title {
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 10px 0px 10px;
 }
 
 @media only screen and (max-width: 750px) {
@@ -26,5 +35,11 @@ header {
                 font-size: 15px
             }
         };
+    }
+}
+@media only screen and (min-width: 700px) {
+    a:hover {
+        transform: translateY(-5%);
+        color: rgb(0, 183, 255);
     }
 }

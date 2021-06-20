@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Monsters from './monsters'
 import Equipments from './equipments'
 import Materials from './materials'
+import Treasures from './treasures'
 import Header from './header'
 
 
@@ -9,9 +10,9 @@ import Header from './header'
 const Main = () => {
 
     function fetchAPI(url) {
-        let request = new XMLHttpRequest()
-        request.open("GET", url, false)
-        request.send()
+        let request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send();
         return request.responseText
     }
     //fetch na sessão 'monsters' da API e converte para JSON
@@ -46,13 +47,23 @@ const Main = () => {
         var materials_data = JSON.parse(materials);
         setmaterialsList(materials_data.data)
     }, [])
+    //fetch na sessão 'treasures' da API e converte para JSON
+
+    var [treasuresList, settreasuresList] = useState([])
+
+    useEffect(() => {
+        const API_URL = 'https://botw-compendium.herokuapp.com/api/v2/category/treasure'
+        var treasures = fetchAPI(API_URL);
+        var treasures_data = JSON.parse(treasures);
+        settreasuresList(treasures_data.data)
+    }, [])
 
     const [content, setContent] = useState('Monsters');
 
     if (content === 'Monsters') {
         return ( 
             <>
-            <Header setContent={setContent}/>
+            <Header content={content} setContent={setContent}/>
             <Monsters monstersList={monstersList}/>             {/*passa o objeto da API como parametro para o componente child*/}
             </>
         );
@@ -61,7 +72,7 @@ const Main = () => {
     if (content === 'Equipments') {
         return (
             <>
-            <Header setContent={setContent}/>
+            <Header content={content} setContent={setContent}/>
             <Equipments equipmentsList={equipmentsList}/>
             </>
         )
@@ -70,8 +81,16 @@ const Main = () => {
     if (content === 'Materials') {
         return (
             <>
-            <Header setContent={setContent}/>
+            <Header content={content} setContent={setContent}/>
             <Materials materialsList={materialsList}/>
+            </>
+        )
+    }
+    if (content === 'Treasures') {
+        return (
+            <>
+            <Header content={content} setContent={setContent}/>
+            <Treasures treasuresList={treasuresList}/>
             </>
         )
     }
