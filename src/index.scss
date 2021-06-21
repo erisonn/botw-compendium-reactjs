@@ -8,6 +8,8 @@
     src: url('/src/font/Calamity-Bold.woff');
     font-weight: bold;
 }
+$zeldablue: rgb(55, 198, 255);
+$backgroundblue: rgba(0, 183, 255, 0.253);
 
 * {
     color: #fff;
@@ -21,7 +23,21 @@ body, html {
     background-image: url('/src/img/background.webp');
     background-attachment: fixed;
 }
-.equipments, .monsters, .materials, .treasures {
+.wrapper {
+    text-align: center;
+    a {
+        margin: 0px 11px 0px 11px;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s ease-in-out
+    }
+    .active {
+        color: $zeldablue;
+        border-bottom: 1px solid $zeldablue;
+    }
+}
+.equipments, .monsters, .materials, .treasures, .creatures {
     margin: auto;
     max-width: 1800px;
     display: flex;
@@ -51,11 +67,18 @@ body, html {
             padding: 0;
             font-weight: bold;
             li {
-                background-color: rgba(0, 183, 255, 0.253);
+                background-color: $backgroundblue;
                 margin: 2px;
                 transition: 0.2s ease-in-out;
                 border-radius: 2px;
             }
         }
     }
+  }
+  @media only screen and (max-width: 750px) {
+      .wrapper {
+          a {
+              font-size: 15px;
+          }
+      }
   }

@@ -3,6 +3,7 @@ import Monsters from './monsters'
 import Equipments from './equipments'
 import Materials from './materials'
 import Treasures from './treasures'
+import Creatures from './creatures'
 import Header from './header'
 
 
@@ -48,9 +49,18 @@ const Main = () => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
     }, [])
 
+    //fetch na sessão 'creatures' da API e converte para JSON
+
+    var [creaturesList, setcreaturesList] = useState([]);
+
+    useEffect(() => {
+        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/creatures', setcreaturesList);
+    }, [])
+
     const [content, setContent] = useState('Monsters');
 
     if (content === 'Monsters') {
+        console.log(creaturesList)
         return ( 
             <>
             <Header content={content} setContent={setContent}/>
@@ -81,6 +91,14 @@ const Main = () => {
             <>
             <Header content={content} setContent={setContent}/>
             <Treasures treasuresList={treasuresList}/>
+            </>
+        )
+    }
+    if (content === 'Creatures') {
+        return (
+            <>
+            <Header content={content} setContent={setContent}/>
+            <Creatures creaturesList={creaturesList}/>
             </>
         )
     }

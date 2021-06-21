@@ -15,7 +15,7 @@ header {
             text-decoration: none;
             font-weight: bold;
             transition: 0.2s ease-in-out;
-            background-color: rgba(0, 183, 255, 0.253);
+            background-color: $backgroundblue;
             border-radius: 2px;
             padding: 0px 5px 0px 5px;
         }
@@ -40,6 +40,12 @@ header {
 @media only screen and (min-width: 700px) {
     a:hover {
         transform: translateY(-5%);
-        color: rgb(0, 183, 255);
+        color: $zeldablue;
     }
 }
+@media only screen and (max-width: 565px) {
+    .dropdown-content {
+        top: 40px !important;
+    }
+};
+    

@@ -6,7 +6,7 @@ const Header = ({content, setContent}) => {
         <>
         <header>
             <nav>
-                <a href="/#">CREATURES</a>
+                <a href="/#" onClick={() => setContent('Creatures')}>CREATURES</a>
                 <a href="/#" onClick={() => setContent('Equipments')}>EQUIPMENTS</a>
                 <a href="/#" onClick={() => setContent('Materials')}>MATERIALS</a>
                 <a href="/#" onClick={() => setContent('Monsters')}>MONSTERS</a>
