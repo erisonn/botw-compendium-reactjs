@@ -28,9 +28,12 @@ body, html {
   text-align: center;
 }
 
-.wrapper a {
-  margin: 0px 11px 0px 11px;
-  padding: 8px 5px 8px 5px;
+.wrapper button {
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  margin: 0 6px;
   font-size: 20px;
   text-decoration: none;
   font-weight: bold;
@@ -41,7 +44,6 @@ body, html {
 .wrapper .active {
   color: #37c6ff;
   background-color: rgba(0, 183, 255, 0.253);
-  padding: 8px 5px 8px 5px;
   border-radius: 2px;
 }
 
@@ -98,7 +100,7 @@ body, html {
 }
 
 @media only screen and (max-width: 750px) {
-  .wrapper a {
+  .wrapper button {
     font-size: 15px;
   }
 }

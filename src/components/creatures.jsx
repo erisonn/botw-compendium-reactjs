@@ -6,8 +6,8 @@ const Creatures = ({creaturesList}) => {
     var [active, setActive] = useState(true)
     return ( 
         <div className="wrapper">
-            <a href="/#" className={active ? 'active':''} onClick={() => setActive(true)}>Creatures: Food</a>
-            <a href="/#" className={active ? '':'active'} onClick={() => setActive(false)}>Creatures: Non Food</a>
+            <button className={active ? 'active':''} onClick={() => setActive(true)}>Creatures: Food</button>
+            <button className={active ? '':'active'} onClick={() => setActive(false)}>Creatures: Non Food</button>
             {active ? <CreatureFood creaturesList={creaturesList} />: <CreatureNonFood creaturesList={creaturesList}/>}
         </div>
     );

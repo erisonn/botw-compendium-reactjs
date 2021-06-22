@@ -6,11 +6,11 @@ const Header = ({content, setContent}) => {
         <>
         <header>
             <nav>
-                <a href="/#" onClick={() => setContent('Creatures')}>CREATURES</a>
-                <a href="/#" onClick={() => setContent('Equipments')}>EQUIPMENTS</a>
-                <a href="/#" onClick={() => setContent('Materials')}>MATERIALS</a>
-                <a href="/#" onClick={() => setContent('Monsters')}>MONSTERS</a>
-                <a href="/#" onClick={() => setContent('Treasures')}>TREASURE</a>
+                <button onClick={() => setContent('Creatures')}>CREATURES</button>
+                <button onClick={() => setContent('Equipments')}>EQUIPMENTS</button>
+                <button onClick={() => setContent('Materials')}>MATERIALS</button>
+                <button onClick={() => setContent('Monsters')}>MONSTERS</button>
+                <button onClick={() => setContent('Treasures')}>TREASURE</button>
             </nav>
         </header>
         <h1 className="content-title">The Legend of Zelda: Breath of the Wild: {content}</h1>
