@@ -27,6 +27,7 @@ body, html {
     text-align: center;
     a {
         margin: 0px 11px 0px 11px;
+        padding: 8px 5px 8px 5px;
         font-size: 20px;
         text-decoration: none;
         font-weight: bold;
@@ -34,7 +35,9 @@ body, html {
     }
     .active {
         color: $zeldablue;
-        border-bottom: 1px solid $zeldablue;
+        background-color: $backgroundblue;
+        padding: 8px 5px 8px 5px;
+        border-radius: 2px;
     }
 }
 .equipments, .monsters, .materials, .treasures, .creatures {

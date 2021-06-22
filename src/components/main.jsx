@@ -60,7 +60,6 @@ const Main = () => {
     const [content, setContent] = useState('Monsters');
 
     if (content === 'Monsters') {
-        console.log(creaturesList)
         return ( 
             <>
             <Header content={content} setContent={setContent}/>
