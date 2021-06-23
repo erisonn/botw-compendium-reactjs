@@ -13,7 +13,6 @@
 * {
   color: #fff;
   font-family: 'Calamity', 'Oswald', sans-serif;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.75);
 }
 
 body, html {
@@ -102,6 +101,12 @@ body, html {
 @media only screen and (max-width: 750px) {
   .wrapper button {
     font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  * {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.75);
   }
 }
 /*# sourceMappingURL=index.css.map */

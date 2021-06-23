@@ -14,7 +14,6 @@ $backgroundblue: rgba(0, 183, 255, 0.253);
 * {
     color: #fff;
     font-family: 'Calamity', 'Oswald', sans-serif;
-    text-shadow: 0 0 30px hsla(0,0%,100%,.75);
 }
 body, html {
     width: 100%;
@@ -80,10 +79,15 @@ body, html {
         }
     }
   }
-  @media only screen and (max-width: 750px) {
-      .wrapper {
-          button {
-              font-size: 15px;
-          }
-      }
-  }
+@media only screen and (max-width: 750px) {
+    .wrapper {
+        button {
+            font-size: 15px;
+        }
+    }
+}
+@media only screen and (min-width: 700px) {
+    * {
+        text-shadow: 0 0 30px hsla(0,0%,100%,.75);
+    }
+}
