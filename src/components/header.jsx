@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css'
 
 //Componente Header: Responsável por definir qual componente vai ser renderizado pelo componente Main, de acordo com o click do user
-const Header = ({content, setContent}) => {
+const Header = ({content, setContent, setsearchTerm}) => {
     return ( 
         <>
         <header>
@@ -15,6 +15,9 @@ const Header = ({content, setContent}) => {
             </nav>
         </header>
         <h1 className="content-title">The Legend of Zelda: Breath of the Wild: {content}</h1>
+        <form>
+            <input type="text" placeholder={'Search '+content+'...'} className="search-bar" onChange={(event) => setsearchTerm(event.target.value.toLowerCase())}/>
+        </form>
         </>
     );
 }

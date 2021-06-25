@@ -1,11 +1,18 @@
 import React from 'react';
 
 //Componente Monsters: Responsável por renderizar os dados da entrada 'monsters' da API, recebidos pelo componente Main.
-const Monsters = ({monstersList}) => {
+const Monsters = ({monstersList, searchterm}) => {
+
   return (  
 
     <div className='monsters'>
-      {monstersList.map(monster => 
+      {monstersList.filter((val) => {
+        if (searchterm === '') {
+          return val
+        } else if (val.name.includes(searchterm)) {
+          return val
+        }
+      }).map((monster) =>  
         <div className='monster-item' key={monster.id}>
           <h1>{monster.name.toUpperCase()}</h1>
           <img src={monster.image} alt={monster.name}/>

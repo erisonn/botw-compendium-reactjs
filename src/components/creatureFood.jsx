@@ -1,10 +1,17 @@
 import React from 'react';
 
 //Componente CreatureFood: Responsável por renderizar os dados do objeto 'food' da entrada 'creatures' API, recebidos pelo componente Main.
-const CreatureFood = ({creaturesList}) => {
+const CreatureFood = ({creaturesList, searchterm}) => {
+    
     return ( 
         <div className="creatures">
-            {creaturesList.food.map(creature =>
+            {creaturesList.food.filter((val) => {
+                if (searchterm === '') {
+                    return val
+                } else if (val.name.includes(searchterm)) {
+                    return val
+                }
+            }).map(creature =>
                 <div className="creature-item" key={creature.id}>
                     <h1>{creature.name.toUpperCase()}</h1>
                     <img src={creature.image} alt={creature.name} />

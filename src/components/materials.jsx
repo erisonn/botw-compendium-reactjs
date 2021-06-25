@@ -1,12 +1,18 @@
 import React from 'react';
 
 //Componente Materials: Responsável por renderizar os dados da entrada 'materials' da API, recebidos pelo componente Main.
-const Materials = ({materialsList}) => {
+const Materials = ({materialsList, searchterm}) => {
 
   return (  
 
     <div className='materials'>
-      {materialsList.map(material => 
+      {materialsList.filter((val) => {
+        if (searchterm === '') {
+          return val
+        } else if (val.name.includes(searchterm)) {
+          return val
+        }
+      }).map(material => 
         <div className='material-item' key={material.id}>
           <h1>{material.name.toUpperCase()}</h1>
           <img src={material.image} alt={material.name}/>

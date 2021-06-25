@@ -1,12 +1,17 @@
 import React from 'react';
 
 //Componente Equipments: Responsável por renderizar os dados da entrada 'equipment' da API, recebidos pelo componente Main.
-const Equipments = ({equipmentsList}) => {
+const Equipments = ({equipmentsList, searchterm}) => {
 
-  return (  
-
+  return (
     <div className='equipments'>
-      {equipmentsList.map(equipment => 
+      {equipmentsList.filter((val) => {
+        if (searchterm === '') {
+          return val
+        } else if(val.name.includes(searchterm)) {
+          return val
+        }
+      }).map(equipment => 
         <div className='equipment-item' key={equipment.id}>
           <h1>{equipment.name.toUpperCase()}</h1>
           <img src={equipment.image} alt={equipment.name.toUpperCase()}/>
@@ -18,7 +23,6 @@ const Equipments = ({equipmentsList}) => {
         </div>
       )}
     </div>
-
   )
 }
  

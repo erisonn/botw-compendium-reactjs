@@ -39,6 +39,21 @@ header nav button {
   font-size: 25px;
 }
 
+.search-bar {
+  background-color: rgba(0, 183, 255, 0.253);
+  border: none;
+  border-radius: 2px;
+  font-weight: 800;
+  font-size: 15px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 16px;
+  height: 30px;
+}
+
 @media only screen and (max-width: 750px) {
   header nav button {
     margin: 0px 5px 0px 5px;

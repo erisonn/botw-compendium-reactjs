@@ -64,12 +64,13 @@ const Main = () => {
     }, [])
 
     const [content, setContent] = useState('Monsters');
+    const [searchterm, setsearchTerm] = useState('')
 
     if (content === 'Monsters') {
         return ( 
             <>
-            <Header content={content} setContent={setContent}/>
-            <Monsters monstersList={monstersList}/>             {/*passa o objeto da API como parametro para o componente child*/}
+            <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
+            <Monsters monstersList={monstersList} searchterm={searchterm}/>             {/*passa o objeto da API como parametro para o componente child*/}
             </>
         );
     } 
@@ -77,8 +78,8 @@ const Main = () => {
     if (content === 'Equipments') {
         return (
             <>
-            <Header content={content} setContent={setContent}/>
-            <Equipments equipmentsList={equipmentsList}/>
+            <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
+            <Equipments equipmentsList={equipmentsList} searchterm={searchterm}/>
             </>
         )
     }
@@ -86,24 +87,24 @@ const Main = () => {
     if (content === 'Materials') {
         return (
             <>
-            <Header content={content} setContent={setContent}/>
-            <Materials materialsList={materialsList}/>
+            <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
+            <Materials materialsList={materialsList} searchterm={searchterm}/>
             </>
         )
     }
     if (content === 'Treasures') {
         return (
             <>
-            <Header content={content} setContent={setContent}/>
-            <Treasures treasuresList={treasuresList}/>
+            <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
+            <Treasures treasuresList={treasuresList} searchterm={searchterm}/>
             </>
         )
     }
     if (content === 'Creatures') {
         return (
             <>
-            <Header content={content} setContent={setContent}/>
-            <Creatures creaturesList={creaturesList}/>
+            <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
+            <Creatures creaturesList={creaturesList} searchterm={searchterm}/>
             </>
         )
     }

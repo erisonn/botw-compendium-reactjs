@@ -1,12 +1,18 @@
 import React from 'react';
 
 //Componente Treasures: Responsável por renderizar os dados da entrada 'treasure' da API, recebidos pelo componente Main.
-const Treasures = ({treasuresList}) => {
+const Treasures = ({treasuresList, searchterm}) => {
 
     return ( 
 
         <div className="treasures">
-            {treasuresList.map(treasure => 
+            {treasuresList.filter((val) => {
+                if (searchterm === '') {
+                    return val
+                } else if (val.name.includes(searchterm)) {
+                    return val
+                }
+            }).map(treasure => 
             <div className="treasure-list" key={treasure.id}>
                 <h1>{treasure.name.toUpperCase()}</h1>
                 <img src={treasure.image} alt={treasure.name} />
