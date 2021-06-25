@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Componente CreatureNonFood: Responsável por renderizar os dados do objeto 'non_food' da entrada 'creatures' API, recebidos pelo componente Main.
 const CreatureNonFood = ({creaturesList}) => {
     return ( 
         <div className="creatures">

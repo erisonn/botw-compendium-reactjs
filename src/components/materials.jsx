@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Componente Materials: Responsável por renderizar os dados da entrada 'materials' da API, recebidos pelo componente Main.
 const Materials = ({materialsList}) => {
 
   return (  

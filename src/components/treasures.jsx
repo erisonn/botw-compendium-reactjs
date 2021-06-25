@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Componente Treasures: Responsável por renderizar os dados da entrada 'treasure' da API, recebidos pelo componente Main.
 const Treasures = ({treasuresList}) => {
 
     return ( 

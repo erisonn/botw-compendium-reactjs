@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Componente Equipments: Responsável por renderizar os dados da entrada 'equipment' da API, recebidos pelo componente Main.
 const Equipments = ({equipmentsList}) => {
 
   return (  

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CreatureFood from './creatureFood'
 import CreatureNonFood from './creatureNonFood'
 
+//Componente Creatures: Responsável por renderizar condicionalmente os componentes CreatureFood e CreatureNonFood, de acordo com o click do user.
 const Creatures = ({creaturesList}) => {
     var [active, setActive] = useState(true)
     return ( 

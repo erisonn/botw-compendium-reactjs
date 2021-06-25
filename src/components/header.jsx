@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.css'
 
+//Componente Header: Responsável por definir qual componente vai ser renderizado pelo componente Main, de acordo com o click do user
 const Header = ({content, setContent}) => {
     return ( 
         <>

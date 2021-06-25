@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Componente Monsters: Responsável por renderizar os dados da entrada 'monsters' da API, recebidos pelo componente Main.
 const Monsters = ({monstersList}) => {
   return (  
 

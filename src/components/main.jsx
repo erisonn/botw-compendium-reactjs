@@ -7,16 +7,22 @@ import Creatures from './creatures'
 import Header from './header'
 
 
-// parent 
+/*
+Componente Main
+    -Responsável por solicitar os dados da API
+    -Passar os dados para JSON
+    -Criar os states contento os dados
+    -Passar os dados para cada componente como parâmetros
+*/
 const Main = () => {
-
+    // A função fetchAPI recebe como parâmetro a url de cada entrada da API. 'SetList' é responsável por definir o state quando a função é chamada.
     const fetchAPI = (url, setList) => {
         fetch(url)
         .then(response => response.json())
         .then(responseText => setList(responseText.data))
     }
 
-    //fetch na sessão 'monsters' da API e converte para JSON
+    //fetch na entrada 'monsters' da API
     
     var [monstersList, setmonsterList] = useState([])
 
@@ -25,7 +31,7 @@ const Main = () => {
     }, [])
 
 
-    //fetch na sessão 'equipments' da API e converte para JSON
+    //fetch na entrada'equipments' da API e converte para JSON
     
     var [equipmentsList, setequipmentList] = useState([])
     
@@ -33,7 +39,7 @@ const Main = () => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/equipment', setequipmentList);
     }, [])
 
-    //fetch na sessão 'materials' da API e converte para JSON
+    //fetch na entrada 'materials' da API e converte para JSON
 
     var [materialsList, setmaterialsList] = useState([])
 
@@ -41,7 +47,7 @@ const Main = () => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/materials', setmaterialsList);
     }, [])
 
-    //fetch na sessão 'treasures' da API e converte para JSON
+    //fetch na entrada 'treasures' da API e converte para JSON
 
     var [treasuresList, settreasuresList] = useState([])
 
@@ -49,7 +55,7 @@ const Main = () => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
     }, [])
 
-    //fetch na sessão 'creatures' da API e converte para JSON
+    //fetch na entrada 'creatures' da API e converte para JSON
 
     var [creaturesList, setcreaturesList] = useState([]);
 
