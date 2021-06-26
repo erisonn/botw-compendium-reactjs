@@ -11,6 +11,7 @@ const CreatureNonFood = ({creaturesList, searchterm}) => {
                 } else if (val.name.includes(searchterm)) {
                     return val
                 }
+                    return false
             }).map(creature =>
                 <div className="creature-item" key={creature.id}>
                     <h1>{creature.name.toUpperCase()}</h1>

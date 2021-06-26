@@ -34,6 +34,12 @@ header nav button {
   transition: 0.2s ease-in-out;
 }
 
+header nav .active {
+  color: #37c6ff;
+  background-color: rgba(0, 183, 255, 0.253);
+  border-radius: 2px;
+}
+
 .content-title {
   text-align: center;
   font-size: 25px;

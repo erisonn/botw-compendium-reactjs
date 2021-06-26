@@ -21,50 +21,23 @@ const Main = () => {
         .then(response => response.json())
         .then(responseText => setList(responseText.data))
     }
+    // State onde os dados da API serão armazenados
+    const [monstersList, setmonsterList] = useState([]);
+    const [equipmentsList, setequipmentList] = useState([]);
+    const [materialsList, setmaterialsList] = useState([]);
+    const [treasuresList, settreasuresList] = useState([]);
+    const [creaturesList, setcreaturesList] = useState([]);
 
-    //fetch na entrada 'monsters' da API
-    
-    var [monstersList, setmonsterList] = useState([])
+    const [content, setContent] = useState('Monsters');// Define qual componente será renderizado
+    const [searchterm, setsearchTerm] = useState('');// Termo de busca
 
     useEffect(() => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/monsters', setmonsterList);
-    }, [])
-
-
-    //fetch na entrada'equipments' da API e converte para JSON
-    
-    var [equipmentsList, setequipmentList] = useState([])
-    
-    useEffect(() => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/equipment', setequipmentList);
-    }, [])
-
-    //fetch na entrada 'materials' da API e converte para JSON
-
-    var [materialsList, setmaterialsList] = useState([])
-
-    useEffect(() => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/materials', setmaterialsList);
-    }, [])
-
-    //fetch na entrada 'treasures' da API e converte para JSON
-
-    var [treasuresList, settreasuresList] = useState([])
-
-    useEffect(() => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
-    }, [])
-
-    //fetch na entrada 'creatures' da API e converte para JSON
-
-    var [creaturesList, setcreaturesList] = useState([]);
-
-    useEffect(() => {
         fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/creatures', setcreaturesList);
     }, [])
-
-    const [content, setContent] = useState('Monsters');
-    const [searchterm, setsearchTerm] = useState('')
 
     if (content === 'Monsters') {
         return ( 
@@ -74,7 +47,6 @@ const Main = () => {
             </>
         );
     } 
-
     if (content === 'Equipments') {
         return (
             <>
@@ -83,7 +55,6 @@ const Main = () => {
             </>
         )
     }
-
     if (content === 'Materials') {
         return (
             <>
@@ -108,7 +79,6 @@ const Main = () => {
             </>
         )
     }
-
 }
  
 export default Main;

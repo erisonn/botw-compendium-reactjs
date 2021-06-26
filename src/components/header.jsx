@@ -7,11 +7,11 @@ const Header = ({content, setContent, setsearchTerm}) => {
         <>
         <header>
             <nav>
-                <button onClick={() => setContent('Creatures')}>CREATURES</button>
-                <button onClick={() => setContent('Equipments')}>EQUIPMENTS</button>
-                <button onClick={() => setContent('Materials')}>MATERIALS</button>
-                <button onClick={() => setContent('Monsters')}>MONSTERS</button>
-                <button onClick={() => setContent('Treasures')}>TREASURE</button>
+                <button className={content === "Creatures" ? 'active' : ''} onClick={() => setContent('Creatures')}>CREATURES</button>
+                <button className={content === "Equipments" ? 'active' : ''} onClick={() => setContent('Equipments')}>EQUIPMENTS</button>
+                <button className={content === "Materials" ? 'active' : ''} onClick={() => setContent('Materials')}>MATERIALS</button>
+                <button className={content === "Monsters" ? 'active' : ''} onClick={() => setContent('Monsters')}>MONSTERS</button>
+                <button className={content=== "Treasures" ? 'active' : ''} onClick={() => setContent('Treasures')}>TREASURE</button>
             </nav>
         </header>
         <h1 className="content-title">The Legend of Zelda: Breath of the Wild: {content}</h1>

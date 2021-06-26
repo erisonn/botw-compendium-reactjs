@@ -23,6 +23,11 @@ header {
         font-weight: bold;
         transition: 0.2s ease-in-out;
         }
+        .active {
+            color: $zeldablue;
+            background-color: $backgroundblue;
+            border-radius: 2px;
+        }
     }
 }
 .content-title {

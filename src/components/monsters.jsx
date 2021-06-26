@@ -12,6 +12,7 @@ const Monsters = ({monstersList, searchterm}) => {
         } else if (val.name.includes(searchterm)) {
           return val
         }
+          return false
       }).map((monster) =>  
         <div className='monster-item' key={monster.id}>
           <h1>{monster.name.toUpperCase()}</h1>

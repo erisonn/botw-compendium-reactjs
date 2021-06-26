@@ -12,6 +12,7 @@ const Treasures = ({treasuresList, searchterm}) => {
                 } else if (val.name.includes(searchterm)) {
                     return val
                 }
+                    return false
             }).map(treasure => 
             <div className="treasure-list" key={treasure.id}>
                 <h1>{treasure.name.toUpperCase()}</h1>
