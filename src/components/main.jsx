@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Monsters from './monsters'
-import Equipments from './equipments'
-import Materials from './materials'
-import Treasures from './treasures'
-import Creatures from './creatures'
-import Header from './header'
+import Loading from '../svg/loading.svg'
+import Monsters from './monsters/monsters'
+import Equipments from './equipments/equipments'
+import Materials from './materials/materials'
+import Treasures from './treasures/treasures'
+import Creatures from './creatures/creatures'
+import Header from './header/header'
 
 
 /*
@@ -20,7 +21,11 @@ const Main = () => {
         fetch(url)
         .then(response => response.json())
         .then(responseText => setList(responseText.data))
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);  
     }
+    const [isLoading, setIsLoading] = useState(true)
     // State onde os dados da API serão armazenados
     const [monstersList, setmonsterList] = useState([]);
     const [equipmentsList, setequipmentList] = useState([]);
@@ -43,7 +48,7 @@ const Main = () => {
         return ( 
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            <Monsters monstersList={monstersList} searchterm={searchterm}/>             {/*passa o objeto da API como parametro para o componente child*/}
+            {isLoading ? <div className="loading"><img src={Loading} alt="Loading..."/></div> : <Monsters monstersList={monstersList} searchterm={searchterm}/>}
             </>
         );
     } 
