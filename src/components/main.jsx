@@ -20,12 +20,8 @@ const Main = () => {
     const fetchAPI = (url, setList) => {
         fetch(url)
         .then(response => response.json())
-        .then(responseText => setList(responseText.data))
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 1000);  
+        .then(responseText => setList(responseText.data))  
     }
-    const [isLoading, setIsLoading] = useState(true)
     // State onde os dados da API serão armazenados
     const [monstersList, setmonsterList] = useState([]);
     const [equipmentsList, setequipmentList] = useState([]);
@@ -48,7 +44,7 @@ const Main = () => {
         return ( 
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            {isLoading ? <div className="loading"><img src={Loading} alt="Loading..."/></div> : <Monsters monstersList={monstersList} searchterm={searchterm}/>}
+            {monstersList.length === 0 ? <div className="loading"><img src={Loading} alt="Loading..."/></div> : <Monsters monstersList={monstersList} searchterm={searchterm}/>}
             </>
         );
     } 
