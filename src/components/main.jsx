@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Loading from '../svg/loading.svg'
+import React, { useState } from 'react';
 import Monsters from './monsters/monsters'
 import Equipments from './equipments/equipments'
 import Materials from './materials/materials'
@@ -20,7 +19,7 @@ const Main = () => {
     const fetchAPI = (url, setList) => {
         fetch(url)
         .then(response => response.json())
-        .then(responseText => setList(responseText.data))  
+        .then(responseText => setList(responseText.data))
     }
     // State onde os dados da API serão armazenados
     const [monstersList, setmonsterList] = useState([]);
@@ -32,19 +31,11 @@ const Main = () => {
     const [content, setContent] = useState('Monsters');// Define qual componente será renderizado
     const [searchterm, setsearchTerm] = useState('');// Termo de busca
 
-    useEffect(() => {
-        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/monsters', setmonsterList);
-        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/equipment', setequipmentList);
-        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/materials', setmaterialsList);
-        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
-        fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/creatures', setcreaturesList);
-    }, [])
-
     if (content === 'Monsters') {
         return ( 
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            {monstersList.length === 0 ? <div className="loading"><img src={Loading} alt="Loading..."/></div> : <Monsters monstersList={monstersList} searchterm={searchterm}/>}
+            <Monsters fetchAPI={fetchAPI} monstersList={monstersList} setmonsterList={setmonsterList} searchterm={searchterm}/>
             </>
         );
     } 
@@ -52,7 +43,7 @@ const Main = () => {
         return (
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            <Equipments equipmentsList={equipmentsList} searchterm={searchterm}/>
+            {<Equipments fetchAPI={fetchAPI} equipmentsList={equipmentsList} setequipmentList={setequipmentList} searchterm={searchterm}/>}
             </>
         )
     }
@@ -60,7 +51,7 @@ const Main = () => {
         return (
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            <Materials materialsList={materialsList} searchterm={searchterm}/>
+            {<Materials fetchAPI={fetchAPI} materialsList={materialsList} setmaterialsList={setmaterialsList} searchterm={searchterm}/>}
             </>
         )
     }
@@ -68,7 +59,7 @@ const Main = () => {
         return (
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            <Treasures treasuresList={treasuresList} searchterm={searchterm}/>
+            {<Treasures fetchAPI={fetchAPI} treasuresList={treasuresList} settreasuresList={settreasuresList} searchterm={searchterm}/>}
             </>
         )
     }
@@ -76,7 +67,7 @@ const Main = () => {
         return (
             <>
             <Header content={content} setContent={setContent} setsearchTerm={setsearchTerm}/>
-            <Creatures creaturesList={creaturesList} searchterm={searchterm}/>
+            {<Creatures fetchAPI={fetchAPI} creaturesList={creaturesList} setcreaturesList={setcreaturesList} searchterm={searchterm}/>}
             </>
         )
     }

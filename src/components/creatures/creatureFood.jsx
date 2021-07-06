@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Loading from '../loading';
 import CreatureFoodItem from './creatureFoodItem';
 
 //Componente CreatureFood: Responsável por renderizar os dados do objeto 'food' da entrada 'creatures' API, recebidos pelo componente Main.
-const CreatureFood = ({creaturesList, searchterm}) => {
+const CreatureFood = ({fetchAPI, creaturesList, setcreaturesList, searchterm}) => {
     
+    useEffect(() => {
+        if (creaturesList.length === 0) {
+            fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/creatures', setcreaturesList);
+            console.log(creaturesList)
+        }
+    }, [])
+
     return ( 
         <div className="creatures">
-            {creaturesList.food.filter((val) => {
+            {creaturesList.length === 0 ? <Loading/> : creaturesList.food.filter((val) => {
                 if (searchterm === '') {
                     return val
                 } else if (val.name.includes(searchterm)) {

@@ -28,6 +28,12 @@ body, html {
     top: 400px;
     left: 50%;
     transform: translateX(-50%);
+    height: 50px;
+    width: 50px;
+    img {
+        height: inherit !important;
+        width: inherit;
+    }
 }
 .wrapper {
     text-align: center;
