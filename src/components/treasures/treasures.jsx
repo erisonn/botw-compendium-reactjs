@@ -9,7 +9,7 @@ const Treasures = ({fetchAPI, treasuresList, settreasuresList, searchterm}) => {
         if (treasuresList.length === 0) {
             fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/treasure', settreasuresList);
         }
-    }, [])
+    }, [fetchAPI, treasuresList, settreasuresList])
 
     return ( 
         <div className="treasures">

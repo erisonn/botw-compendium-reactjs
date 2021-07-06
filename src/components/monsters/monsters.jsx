@@ -9,7 +9,7 @@ const Monsters = ({fetchAPI, monstersList, setmonsterList, searchterm}) => {
     if (monstersList.length === 0) {
       fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/monsters', setmonsterList);
     }
-  }, [])
+  }, [fetchAPI, setmonsterList, monstersList])
 
   return (  
     <div className='monsters'>

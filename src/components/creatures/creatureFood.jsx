@@ -8,9 +8,8 @@ const CreatureFood = ({fetchAPI, creaturesList, setcreaturesList, searchterm}) =
     useEffect(() => {
         if (creaturesList.length === 0) {
             fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/creatures', setcreaturesList);
-            console.log(creaturesList)
         }
-    }, [])
+    }, [fetchAPI, creaturesList, setcreaturesList])
 
     return ( 
         <div className="creatures">

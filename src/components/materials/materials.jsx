@@ -9,7 +9,7 @@ const Materials = ({fetchAPI, materialsList, setmaterialsList, searchterm}) => {
     if (materialsList.length === 0) {
       fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/materials', setmaterialsList);
     }
-  }, [])
+  }, [fetchAPI, materialsList, setmaterialsList])
 
   return (  
 

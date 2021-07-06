@@ -8,7 +8,7 @@ const Equipments = ({fetchAPI, equipmentsList, setequipmentList, searchterm}) =>
     if (equipmentsList.length === 0) {
       fetchAPI('https://botw-compendium.herokuapp.com/api/v2/category/equipment', setequipmentList);
     }
-  }, [])
+  }, [fetchAPI, equipmentsList, setequipmentList])
 
   return (
     <div className='equipments'>

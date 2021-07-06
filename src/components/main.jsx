@@ -18,8 +18,13 @@ const Main = () => {
     // A função fetchAPI recebe como parâmetro a url de cada entrada da API. 'SetList' é responsável por definir o state quando a função é chamada.
     const fetchAPI = (url, setList) => {
         fetch(url)
-        .then(response => response.json())
+        .then(response => 
+        {
+            if (response.ok) 
+            return response.json()
+        })
         .then(responseText => setList(responseText.data))
+        .catch(error => console.log(error))
     }
     // State onde os dados da API serão armazenados
     const [monstersList, setmonsterList] = useState([]);
