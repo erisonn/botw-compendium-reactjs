@@ -1,3 +1,4 @@
+$zeldablue: rgb(55, 198, 255);
 .card-link {
     text-decoration: none;
 }
@@ -7,9 +8,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 10px 1px 10px 1px;
-    background-color: azure;
-    border: 1px solid rgba(63, 63, 63, 0.212);
-    border-radius: 5px;
     cursor: pointer;
     width: 120px;
     min-height: 150px;
@@ -17,15 +15,15 @@
     &:hover {
         transform: scale(1.1);
         h1 {
-            color: rgb(202, 83, 202);
+            color: $zeldablue;
         }
     }
     .item-image {
-        position: relative;
-        top: 20%;
+        margin-top: 10px;
         width: 100px;
         img {
             width: inherit;
+            border-radius: 2px;
         }
     }
     .item-name {
@@ -38,8 +36,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: fit-content;
-        font-size: 10px;
-        color: rgb(63, 63, 63);
+        font-size: 12px;
         transition: 0.2s ease-in-out;
     }
 }

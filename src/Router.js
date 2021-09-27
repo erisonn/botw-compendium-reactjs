@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router";
-import Main from './components/main'
+import Main from './components/pages/Main'
 
 const Router = () => {
     return ( 
