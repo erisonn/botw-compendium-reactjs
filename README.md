@@ -17,6 +17,6 @@ A página irá recarregar caso você faça alguma alteração no código.
 
 Compila o app para deploy no diretório `build`.
 
-App disponível no Heroku: 
+App disponível no Vercel: 
 
-## https://hyrule-compendium-botw.herokuapp.com/
+## https://hyrule-compendium-erisonn.vercel.app/
