@@ -7,13 +7,13 @@ $zeldablue: rgb(55, 198, 255);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 1px 10px 1px;
+    margin: 20px;
     cursor: pointer;
     width: 120px;
     min-height: 150px;
     transition: 0.2s ease-in-out;
     &:hover {
-        transform: scale(1.1);
+       
         h1 {
             color: $zeldablue;
         }

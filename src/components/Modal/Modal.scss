@@ -1,0 +1,13 @@
+$zeldablue: rgb(55, 198, 255);
+$backgroundblue: rgb(0, 0, 0);
+
+.modal {
+    z-index: 1;
+    position: fixed;
+    transform: translateY(-50%);
+    background-color: $backgroundblue;
+    border-radius: 2px;
+    text-align: center;
+    width: 500px !important;
+    padding: 5px; 
+}

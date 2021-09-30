@@ -1,9 +1,9 @@
 export const formatZeldadata = (data) => data && data.map(item => {
     return {
         img: item.image,
-        name: item.name,
+        name: item.name.toUpperCase(),
         id: item.id,
-        link: `/${item.category}/${item.name}`
+        description: item.description,
     }
 })
 
